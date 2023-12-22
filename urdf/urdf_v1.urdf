@@ -81,7 +81,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_base.stl" />
+				<mesh filename="package://robot_description/meshes/robot_base.stl" />
 			</geometry>
 			<material name="White_Transparent" />
 		</visual>
@@ -89,7 +89,7 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_base.stl" />
+				<mesh filename="package://robot_description/meshes/robot_base.stl" />
 			</geometry>
 		</collision>
 	</link>
@@ -105,7 +105,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_l.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_l.stl" />
 			</geometry>
 			<material name="Green" />
 		</visual>
@@ -113,7 +113,7 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_l.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_l.stl" />
 			</geometry>
 		</collision>
 	</link>
@@ -129,7 +129,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_r.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_r.stl" />
 			</geometry>
 			<material name="Green" />
 		</visual>
@@ -137,7 +137,7 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_r.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_r.stl" />
 			</geometry>
 		</collision>
 	</link>
@@ -153,7 +153,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_center.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_center.stl" />
 			</geometry>
 			<material name="Green" />
 		</visual>
@@ -161,7 +161,7 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_r.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_r.stl" />
 			</geometry>
 		</collision>
 	</link>
@@ -177,7 +177,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_center.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_center.stl" />
 			</geometry>
 			<material name="Green" />
 		</visual>
@@ -185,7 +185,7 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh filename="/home/ubuntu/ros/src/abot_description/meshes/robot_wheel_r.stl" />
+				<mesh filename="package://robot_description/meshes/robot_wheel_r.stl" />
 			</geometry>
 		</collision>
 	</link>
