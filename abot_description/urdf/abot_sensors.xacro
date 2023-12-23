@@ -2,7 +2,7 @@
 <robot name="abot"
 	xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<link name="abot_lidar">
+	<link name="robot_lidar">
 		<inertial>
 			<origin xyz="0 0 0" rpy="0 0 0"/>
 			<mass value="0"/>
@@ -27,8 +27,8 @@
 
 	<joint name="lidar_to_base" type="fixed">
 		<origin xyz="-0.06 0.0002 0.15" rpy="0 0 ${PI}"/>
-		<parent link="abot_base"/>
-		<child link="abot_lidar"/>
+		<parent link="robot_base"/>
+		<child link="robot_lidar"/>
 		<axis xyz="0 0 0"/>
 	</joint>
 </robot>

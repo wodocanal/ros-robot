@@ -29,7 +29,7 @@
 		</visual>
 	</link>
 
-	<link name="abot_base">
+	<link name="robot_base">
 		<inertial>
 			<origin xyz="0 0 0.0075" rpy="0 0 0"/>
 			<mass value="0.71798"/>
@@ -56,7 +56,7 @@
 	<joint name="base_link_to_abot_base" type="fixed">
 		<origin xyz="0 0 0" rpy="0 0 0" />
 		<parent link="base_link" />
-		<child link="abot_base" />
+		<child link="robot_base" />
 	</joint>
 
 	<joint name="base_footprint_to_base_link" type="fixed">

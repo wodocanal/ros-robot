@@ -2,7 +2,7 @@
 <robot name="abot"
 	xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<link name="abot_caster_wheel_1">
+	<link name="robot_caster_wheel_1">
 		<inertial>
 			<origin xyz="0 1.6073E-19 0" rpy="0 0 0"/>
 			<mass value="0.011207"/>
@@ -25,7 +25,7 @@
 		</collision>
 	</link>
 
-	<link name="abot_caster_wheel_2">
+	<link name="robot_caster_wheel_2">
 		<inertial>
 			<origin xyz="0 1.6073E-19 0" rpy="0 0 0"/>
 			<mass value="0.011207"/>
@@ -52,15 +52,15 @@
 
 	<joint name="caster_wheel_1_to_base" type="continuous">
 		<origin xyz="-0.065 0 0.0075" rpy="0 0 0" />
-		<parent link="abot_base" />
-		<child link="abot_caster_wheel_1" />
+		<parent link="robot_base" />
+		<child link="robot_caster_wheel_1" />
 		<axis xyz="0 1 0" />
 	</joint>
 
 	<joint name="caster_wheel_2_to_base" type="continuous">
 		<origin xyz="0.055 0 0.0075" rpy="0 0 0" />
-		<parent link="abot_base" />
-		<child link="abot_caster_wheel_2" />
+		<parent link="robot_base" />
+		<child link="robot_caster_wheel_2" />
 		<axis xyz="0 1 0" />
 	</joint>
 </robot>
