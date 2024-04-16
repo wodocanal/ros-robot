@@ -4,10 +4,10 @@
 #include <ros/ros.h>
 #include <wiringPi.h>
 
-#define ENCODER_1_PIN_A 17  // Wiring pi 0 = BCM 17
-#define ENCODER_1_PIN_B 27  // Wiring pi 2 = BCM 27
-#define ENCODER_2_PIN_A 24  // Wiring pi 5 = BCM 24
-#define ENCODER_2_PIN_B 25  // Wiring pi 6 = BCM 25
+#define ENCODER_1_PIN_A 23  // 4
+#define ENCODER_1_PIN_B 22  // 3
+#define ENCODER_2_PIN_A 24  // 5
+#define ENCODER_2_PIN_B 25  // 6
 
 #define PULSES_PER_REVOLUTION 492
 
