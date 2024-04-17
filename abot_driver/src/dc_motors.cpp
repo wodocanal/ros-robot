@@ -10,7 +10,7 @@ DCMotorWiringPi left_dc_motor(MOTOR_1_PIN_D, MOTOR_1_PIN_E);
 DCMotorWiringPi right_dc_motor(MOTOR_2_PIN_D, MOTOR_2_PIN_E);
 
 void leftMotorCallback(const std_msgs::Float64& msg) {
-	int16_t pwm = msg.data * 100;
+	int16_t pwm = msg.data * 10;
 	if (pwm > 0) {
 		left_dc_motor.ccw(abs(pwm));
 	} else if (pwm < 0) {
@@ -21,7 +21,7 @@ void leftMotorCallback(const std_msgs::Float64& msg) {
 }
 
 void rightMotorCallback(const std_msgs::Float64& msg) {
-	int16_t pwm = msg.data * 100;
+	int16_t pwm = msg.data * 10;
 	if (pwm > 0) {
 		right_dc_motor.ccw(abs(pwm));
 	} else if (pwm < 0) {
