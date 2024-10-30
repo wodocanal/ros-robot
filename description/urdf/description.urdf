@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="robot">
+	<link name = "base_link">
+      	<visual>
+        	<origin xyz="0 0 0" rpy="0 0 0"/>
+        	<geometry>
+            	<cylinder radius="0.25" length="0.001"/>
+        	</geometry>
+        	<material name="blue">
+               	<color rgba="0.0 0.0 1.0 0.2"/>
+         	</material>
+    	</visual>
+  	</link>
+ 
+	<link name = "robot_base">
+      	<visual>
+        	<origin xyz="0 0 0" rpy="0 0 0"/>
+        	<geometry>
+            	<cylinder radius="0.25" length="0.2"/>
+        	</geometry>
+        	<material name="white">
+               	<color rgba="1 1 1 1"/>
+         	</material>
+    	</visual>
+  	</link>
+
+	<link name = "left_wheel">
+      	<visual>
+        	<origin xyz="0 0 0" rpy="0 0 0"/>
+        	<geometry>
+            	<cylinder radius="0.08" length="0.04"/>
+        	</geometry>
+        	<material name="black">
+               	<color rgba="0 0 0 1"/>
+         	</material>
+    	</visual>
+  	</link>
+
+	<link name = "right_wheel">
+      	<visual>
+        	<origin xyz="0 0 0" rpy="0 0 0"/>
+        	<geometry>
+            	<cylinder radius="0.08" length="0.04"/>
+        	</geometry>
+        	<material name="black">
+               	<color rgba="0 0 0 1"/>
+         	</material>
+    	</visual>
+  	</link>
+
+	<link name = "forward_caster_wheel">
+      	<visual>
+        	<origin xyz="0 0 0" rpy="0 0 0"/>
+        	<geometry>
+            	<sphere radius="0.025"/>
+        	</geometry>
+        	<material name="black">
+               	<color rgba="0 0 0 1"/>
+         	</material>
+    	</visual>
+  	</link>
+
+	<link name = "backward_caster_wheel">
+      	<visual>
+        	<origin xyz="0 0 0" rpy="0 0 0"/>
+        	<geometry>
+            	<sphere radius="0.025"/>
+        	</geometry>
+        	<material name="black">
+               	<color rgba="0 0 0 1"/>
+         	</material>
+    	</visual>
+  	</link>
+
+	<link name = "lidar">
+      	<visual>
+        	<origin xyz="0 0 0" rpy="0 0 0"/>
+        	<geometry>
+            	<cylinder radius="0.03" length="0.025"/>
+        	</geometry>
+        	<material name="yellow">
+               	<color rgba="1 1 0 1"/>
+         	</material>
+    	</visual>
+  	</link>
+
+
+	<joint name="base_to_base_link_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="robot_base"/>
+    	<origin xyz="0 0 0.15" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="left_wheel_to_base_joint" type="continuous">
+    	<parent link="robot_base"/>
+    	<child link="left_wheel"/>
+    	<origin xyz="0 0.15 -0.07" rpy="1.57079632679 0 0"/>
+	</joint>
+
+	<joint name="right_wheel_to_base_joint" type="continuous">
+    	<parent link="robot_base"/>
+    	<child link="right_wheel"/>
+    	<origin xyz="0 -0.15 -0.07" rpy="1.57079632679 0 0"/>
+	</joint>
+
+	<joint name="forward_wheel_to_base_joint" type="continuous">
+    	<parent link="robot_base"/>
+    	<child link="forward_caster_wheel"/>
+    	<origin xyz="0.2 0 -0.125" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="backward_wheel_to_base_joint" type="continuous">
+    	<parent link="robot_base"/>
+    	<child link="backward_caster_wheel"/>
+    	<origin xyz="-0.2 0 -0.125" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="lidar_to_base_joint" type="continuous">
+    	<parent link="robot_base"/>
+    	<child link="lidar"/>
+    	<origin xyz="0.15 0 0.1125" rpy="0 0 0"/>
+	</joint>
+
+</robot>
+
