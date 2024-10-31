@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+folders=(
+    "description"
+    "slam"
+    "navigation"
+)
+
+for folder in $folders; do
+    if [[ -d $folder ]]; then
+        echo "Удаляю папку: $folder"
+        rm -rf "$folder"
+    else
+        echo "Папка $folder не существует."
+    fi
+done
+
+echo "Удаление завершено."
+
+echo "Удаляю сам скрипт: $0"
+rm -- "$0"
