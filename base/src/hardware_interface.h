@@ -63,10 +63,10 @@ AbotHardwareInterface::AbotHardwareInterface(ros::NodeHandle node, ros::NodeHand
 	, _max_wheel_angular_speed(target_max_wheel_angular_speed) {
 	registerControlInterfaces();
 
-	_left_wheel_vel_pub = _node.advertise<std_msgs::Float64>("/abot/left_wheel/target_velocity", 1);
-	_right_wheel_vel_pub = _node.advertise<std_msgs::Float64>("/abot/right_wheel/target_velocity", 1);
-	_left_wheel_angle_sub = _node.subscribe("abot/left_wheel/angle", 1, &AbotHardwareInterface::leftWheelAngleCallback, this);
-	_right_wheel_angle_sub = _node.subscribe("abot/right_wheel/angle", 1, &AbotHardwareInterface::rightWheelAngleCallback, this);
+	_left_wheel_vel_pub = _node.advertise<std_msgs::Float64>("/left_wheel/target_velocity", 1);
+	_right_wheel_vel_pub = _node.advertise<std_msgs::Float64>("/right_wheel/target_velocity", 1);
+	_left_wheel_angle_sub = _node.subscribe("/left_wheel/angle", 1, &AbotHardwareInterface::leftWheelAngleCallback, this);
+	_right_wheel_angle_sub = _node.subscribe("/right_wheel/angle", 1, &AbotHardwareInterface::rightWheelAngleCallback, this);
 }
 
 void AbotHardwareInterface::writeCommandsToHardware() {
@@ -105,7 +105,7 @@ void AbotHardwareInterface::updateJointsFromHardware(const ros::Duration& period
 }
 
 void AbotHardwareInterface::registerControlInterfaces() {
-	ros::V_string joint_names = boost::assign::list_of("left_wheel_to_base")("right_wheel_to_base");
+	ros::V_string joint_names = boost::assign::list_of("left_wheel_to_base_joint")("right_wheel_to_base_joint");
 
 	for (unsigned int i = 0; i < joint_names.size(); i++) {
 		hardware_interface::JointStateHandle joint_state_handle(joint_names[i], &_joints[i].position, &_joints[i].velocity, &_joints[i].effort);

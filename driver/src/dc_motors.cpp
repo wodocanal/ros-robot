@@ -33,7 +33,7 @@ void rightMotorCallback(const std_msgs::Float64& msg) {
 }
 
 int main(int argc, char** argv) {
-	ros::init(argc, argv, "dc_motors");
+	ros::init(argc, argv, "motors");
 	ros::NodeHandle node;
 	ros::Subscriber left_motor_target_vel_sub = node.subscribe("/abot/left_wheel/pwm", 1, &leftMotorCallback);
 	ros::Subscriber right_motor_target_vel_sub = node.subscribe("/abot/right_wheel/pwm", 1, &rightMotorCallback);

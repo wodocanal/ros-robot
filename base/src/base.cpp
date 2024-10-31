@@ -19,7 +19,7 @@ void controlLoop(AbotHardwareInterface& hardware, controller_manager::Controller
 }
 
 int main(int argc, char** argv) {
-	ros::init(argc, argv, "abot_base");
+	ros::init(argc, argv, "base");
 	ros::NodeHandle node;
 	ros::NodeHandle private_node("~");
 
