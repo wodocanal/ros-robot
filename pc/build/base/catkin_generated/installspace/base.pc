@@ -1,8 +1,0 @@
-prefix=/home/wodo/workspace/pc/install
-
-Name: base
-Description: Description of base
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: controller_manager roscpp hardware_interface

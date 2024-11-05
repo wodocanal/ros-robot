@@ -1,8 +1,8 @@
 rpi/devel/*
 rpi/build/*
-rpi/CMakeLists.txt
+rpi/src/CMakeLists.txt
 pc/devel/*
 pc/build/*
-pc/CMakeLists.txt
+pc/src/CMakeLists.txt
 rpi/.catkin_workspace
 pc/,catkin_workspace

@@ -1,2 +1,0 @@
-base:bringup:control:driver
--DCATKIN_DEVEL_PREFIX=/home/wodo/workspace/rpi/devel -DCMAKE_INSTALL_PREFIX=/home/wodo/workspace/rpi/install -G Unix Makefiles
