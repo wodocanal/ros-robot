@@ -5,4 +5,4 @@ pc/devel/*
 pc/build/*
 pc/src/CMakeLists.txt
 rpi/.catkin_workspace
-pc/,catkin_workspace
+pc/.catkin_workspace
