@@ -1,6 +1,0 @@
-<launch>
-	<node name="encoders" pkg="driver" type="encoders" output="screen" />
-	<node name="motors" pkg="driver" type="motors" output="screen" />
-	<include file="$(find driver)/launch/pid.launch" />
-	<include file="$(find driver)/launch/lidar.launch" />
-</launch>
