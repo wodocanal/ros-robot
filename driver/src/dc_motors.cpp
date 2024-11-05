@@ -2,41 +2,30 @@
 #include "dc_motor_wiring_pi.hpp"
 #include <std_msgs/Float64.h>
 
-#define MOTOR_1_PIN_D 4 // Wiring pi 7 = BCM 4
-#define MOTOR_1_PIN_E 18 // Wiring pi 1 = BCM 18
-#define MOTOR_2_PIN_D 12 // Wiring pi 26 = BCM 12
-#define MOTOR_2_PIN_E 13 // Wiring pi 23 = BCM 13
+#define MOTOR_1_PIN_D 16
+#define MOTOR_1_PIN_E 19
+#define MOTOR_1_PIN_S 26
+#define MOTOR_2_PIN_D 12
+#define MOTOR_2_PIN_E 13
+#define MOTOR_2_PIN_S 6
 
-DCMotorWiringPi left_dc_motor(MOTOR_1_PIN_D, MOTOR_1_PIN_E);
-DCMotorWiringPi right_dc_motor(MOTOR_2_PIN_D, MOTOR_2_PIN_E);
+DCMotorWiringPi left_motor(MOTOR_1_PIN_D, MOTOR_1_PIN_E, MOTOR_1_PIN_S, false);
+DCMotorWiringPi right_motor(MOTOR_2_PIN_D, MOTOR_2_PIN_E, MOTOR_1_PIN_S, false);
 
 void leftMotorCallback(const std_msgs::Float64& msg) {
-	int16_t pwm = msg.data * 100;
-	if (pwm > 0) {
-		left_dc_motor.ccw(abs(pwm));
-	} else if (pwm < 0) {
-		left_dc_motor.cw(abs(pwm));
-	} else if (pwm == 0) {
-		left_dc_motor.stop();
-	}
+	left_motor.set(msg.data * 100);
 }
 
 void rightMotorCallback(const std_msgs::Float64& msg) {
-	int16_t pwm = msg.data * 100;
-	if (pwm > 0) {
-		right_dc_motor.ccw(abs(pwm));
-	} else if (pwm < 0) {
-		right_dc_motor.cw(abs(pwm));
-	} else if (pwm == 0) {
-		right_dc_motor.stop();
-	}
+	right_motor.set(msg.data * 100);
+	
 }
 
 int main(int argc, char** argv) {
 	ros::init(argc, argv, "motors");
 	ros::NodeHandle node;
-	ros::Subscriber left_motor_target_vel_sub = node.subscribe("/abot/left_wheel/pwm", 1, &leftMotorCallback);
-	ros::Subscriber right_motor_target_vel_sub = node.subscribe("/abot/right_wheel/pwm", 1, &rightMotorCallback);
+	ros::Subscriber left_motor_target_vel_sub = node.subscribe("/left_wheel/pwm", 1, &leftMotorCallback);
+	ros::Subscriber right_motor_target_vel_sub = node.subscribe("/right_wheel/pwm", 1, &rightMotorCallback);
 	ros::spin();
 	return 0;
 }
