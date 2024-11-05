@@ -1,0 +1,8 @@
+prefix=/home/wodo/project/pc/devel
+
+Name: driver
+Description: Description of driver
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

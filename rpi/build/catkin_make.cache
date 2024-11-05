@@ -1,0 +1,2 @@
+base:bringup:control:driver:rplidar_ros
+-DCATKIN_DEVEL_PREFIX=/home/wodo/project/rpi/devel -DCMAKE_INSTALL_PREFIX=/home/wodo/project/rpi/install -G Unix Makefiles
