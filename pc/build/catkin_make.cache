@@ -1,0 +1,2 @@
+base:bringup:control:description:driver:navigation:slam
+-DCATKIN_DEVEL_PREFIX=/home/wodo/workspace/pc/devel -DCMAKE_INSTALL_PREFIX=/home/wodo/workspace/pc/install -G Unix Makefiles

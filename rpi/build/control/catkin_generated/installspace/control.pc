@@ -1,0 +1,8 @@
+prefix=/home/wodo/workspace/rpi/install
+
+Name: control
+Description: Description of control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: controller_manager hardware_interface trajectory_msgs
