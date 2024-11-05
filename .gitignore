@@ -1,0 +1,6 @@
+rpi/devel
+rpi/build
+rpi/CMakeLists.txt
+pc/devel
+pc/build
+pc/CMakeLists.txt
