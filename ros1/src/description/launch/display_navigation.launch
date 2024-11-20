@@ -1,0 +1,9 @@
+<launch>
+	<arg name="rvizconfig" default="$(find description)/rviz/navigation.rviz" />
+	<arg name="model" default="$(find description)/urdf/description.urdf" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="false"/>
+
+	<include file="$(find navigation)/launch/navigation.launch" />
+</launch>
